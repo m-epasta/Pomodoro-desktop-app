@@ -98,7 +98,7 @@ export const useTimer = () => {
         setTimerState(TimerState.Break);
         setTimerDuration(0);
 
-        // Hardcoded break times as requested
+        // Hardcoded break times
         // 25m work -> 5m break
         // 30m work -> 6m break
         // 35m work -> 8m break
@@ -117,10 +117,6 @@ export const useTimer = () => {
     const finishBreak = useCallback(() => {
         setTimerState(TimerState.Running);
         setTimerDuration(0);
-        // Reset to default or previous? Let's reset to 25 for now or keep it configurable.
-        // Ideally we should remember the user's preference. 
-        // For now, let's default back to 25 to be safe, or maybe the previous value?
-        // Let's just set it to 25 as a safe default for a new session.
         setSessionLength(25 * 60);
     }, []);
 
