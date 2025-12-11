@@ -1,60 +1,19 @@
-# Rust Pomodoro Timer App
+# POMODORO APP
 
-This repository contains a desktop Pomodoro Timer application, built with Rust using the Tauri framework and Yew for frontend development. The application implements the Pomodoro technique, aiding in productivity and time management.
+fork from @max-taylor
 
-## Features
+## differences
 
-- **Pomodoro Timer**: Manage work sessions and breaks efficiently.
-- **Customizable Sessions**: Adjust the length of work sessions and breaks.
-- **System Tray Integration**: Control and view the timer from the system tray.
-- **Interactive UI**: Start, pause, and reset the timer with intuitive controls.
+- made with react as frontend
+- enhanced UI 
 
-## Getting Started
+## CONTRIBUTIONS
 
-These instructions will get you a copy of the project up and running on your local machine.
+- Needs fix on sound (only in prod — tested it on ubuntu 22.04)
+- Maybe some features ? 
+- Maybe bundle it into windows or macos ?
 
-### Prerequisites
+## CONFIGURATION
 
-- Rust: [Installation Guide](https://www.rust-lang.org/tools/install)
-- Tauri: [Setup Instructions](https://tauri.app/v1/guides/getting-started/prerequisites)
-- Yarn: [Installation Guide](https://classic.yarnpkg.com/lang/en/docs/install/)
-- npx: [Installation Guide](https://www.npmjs.com/package/npx)
-
-### Installation
-
-1. **Clone the Repository**
-
-   ```bash
-   git clone https://github.com/max-taylor/Full-Stack-Rust---Pomodoro-Desktop-App.git
-   ```
-
-2. **Run the Development Server**
-
-   ```bash
-   cargo tauri dev
-   ```
-
-3. **Run the Tailwind Watcher service**
-
-   ```bash
-   npx tailwindcss -i ./src/input.css -o ./output.css --watch
-   ```
-
-## Usage
-
-After starting the application, you can:
-
-- Set the duration of work sessions and breaks.
-- Start, pause, and reset the timer.
-- View the timer status in the system tray.
-- Access timer controls through the system tray icon.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
-## Acknowledgments
-
-- Yew Framework
-- Tauri Toolkit
-- Rust Community
+- depends on your os
+- the .Appimage is at src-tauri/target/release/bundle/appimage/pomodoro-app_0.0.0_amd64.AppImage
