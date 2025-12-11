@@ -1,12 +1,12 @@
 import { useCallback } from 'react';
+import clickSound from '../assets/mixkit-fast-double-click-on-mouse-275.wav';
 
 export const useSound = () => {
     const playClick = useCallback(() => {
-        const soundPath = '/sounds/click.wav';
-        console.log('Attempting to play sound from:', soundPath);
+        console.log('Attempting to play sound from:', clickSound);
 
         try {
-            const audio = new Audio(soundPath);
+            const audio = new Audio(clickSound);
             audio.volume = 0.5;
             const playPromise = audio.play();
 
