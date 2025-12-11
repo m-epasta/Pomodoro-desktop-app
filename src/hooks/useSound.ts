@@ -1,14 +1,26 @@
 import { useCallback } from 'react';
-import clickSound from '../assets/mixkit-fast-double-click-on-mouse-275.wav';
 
 export const useSound = () => {
     const playClick = useCallback(() => {
+        const soundPath = '/sounds/click.wav';
+        console.log('Attempting to play sound from:', soundPath);
+
         try {
-            const audio = new Audio(clickSound);
+            const audio = new Audio(soundPath);
             audio.volume = 0.5;
-            audio.play().catch(e => console.error('Audio play failed', e));
+            const playPromise = audio.play();
+
+            if (playPromise !== undefined) {
+                playPromise
+                    .then(() => {
+                        console.log('Audio playback started successfully');
+                    })
+                    .catch(e => {
+                        console.error('Audio play promise rejected:', e);
+                    });
+            }
         } catch (e) {
-            console.error('Failed to play sound', e);
+            console.error('Failed to initialize audio:', e);
         }
     }, []);
 
