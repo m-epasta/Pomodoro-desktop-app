@@ -1,7 +1,7 @@
 {
   "productName": "pomodoro-app",
   "version": "0.0.0",
-  "identifier": "com.tauri.dev",
+  "identifier": "com.pomodori.app",
   "build": {
     "beforeDevCommand": "npm run dev",
     "beforeBuildCommand": "npm run build",
