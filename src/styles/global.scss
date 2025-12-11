@@ -1,0 +1,15 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+body {
+    margin: 0;
+    font-family: $font-family-sans;
+    background-color: $color-bg;
+    color: $color-text;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+    box-sizing: border-box;
+}

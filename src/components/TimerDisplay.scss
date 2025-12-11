@@ -1,0 +1,121 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.timer-display-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.circular-progress-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    @include flex-center;
+
+    svg {
+        transform: rotate(-90deg);
+        width: 100%;
+        height: 100%;
+        filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.15));
+    }
+
+    circle {
+        transition: stroke-dashoffset 1s linear;
+
+        &.bg-circle {
+            color: #1f2937; // gray-800
+        }
+
+        &.progress-circle {
+            &.state-break {
+                color: #3b82f6;
+            }
+
+            // blue-500
+            &.state-expired {
+                color: #ef4444;
+            }
+
+            // red-500
+            &.state-focus {
+                color: #f43f5e;
+            }
+
+            // rose-500
+        }
+    }
+}
+
+.time-text-container {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .time-value {
+        font-size: 4.5rem; // 7xl approx
+        font-weight: 700;
+        letter-spacing: -0.05em;
+        color: white;
+        text-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .status-text {
+        margin-top: 0.5rem;
+        font-size: 1.125rem;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+
+        &.state-break {
+            color: #60a5fa;
+        }
+
+        // blue-400
+        &.state-focus {
+            color: #fb7185;
+        }
+
+        // rose-400
+    }
+}
+
+.session-controls {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+
+    .btn-adjust {
+        @include btn-base;
+        padding: 0.75rem;
+        border-radius: 9999px;
+        @include glass-container;
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        svg {
+            color: #9ca3af; // gray-400
+            transition: color 0.2s;
+        }
+
+        &:hover svg {
+            color: white;
+        }
+    }
+
+    .label {
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: $color-text-muted;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+    }
+}

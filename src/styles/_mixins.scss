@@ -1,0 +1,25 @@
+@use 'variables' as *;
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin glass-container {
+    background: $color-glass;
+    border: 1px solid $color-glass-border;
+    backdrop-filter: blur(10px);
+}
+
+@mixin btn-base {
+    @include flex-center;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    border: none;
+    outline: none;
+
+    &:active {
+        transform: scale(0.95);
+    }
+}
